@@ -1,0 +1,73 @@
+<div class="navBar sticky-top">
+    <div class="navContainer">
+    <div class="container navLogo">
+       <a href="#top"><img src="https://res.cloudinary.com/dlvavuuqe/image/upload/v1498911635/Untitled-3_vp2bzc.png"/></a>
+    <!--<a href="/cart" id="cart" class="fa fa-shopping-cart "><span class="badge">{{#if session.carts}}{{session.carts.length}}{{/if}}</span></a>-->
+
+        <div class="dropdown cartDrop">
+  <a class="fa fa-shopping-cart" id="cart" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
+    
+  </a><span class="badge">{{#if session.carts}}{{session.carts.length}}{{/if}}</span>
+  <div class="dropdown-menu animated bounceInDown" aria-labelledby="dropdownMenuButton">
+{{#if session.carts}}
+    <div class="cartHeader">
+        <i class="fa fa-shopping-bag"> Καλάθι αγορών</i>
+    <a href="/clearCart">Καθαρισμός</a>
+    </div>
+<div class="cartDiv">
+{{#each session.carts}}
+    <div class="cartbody">
+    <img src="{{this.item.url}}" alt="{{this.item.brand}}"/>
+      <div class="cartinfo">
+      <span>{{this.item.brand}}</span>
+      <span>{{this.item.model}}</span>
+      <span>{{this.item.price}}€ x {{this.qty}}</span>
+        </div>
+       <a class="rem" data-url="{{this.item._id}}" ><i class="fa fa-times" aria-hidden="true"></i></a>
+    </div>
+        {{/each}}
+        </div>
+    <div class="cartfooter">
+   <a href="/cart" class="fa fa-shopping-cart "></a>
+      <span class="totalQty">{{session.cart.totalPrice}}€</span>
+    </div>
+{{else}}
+<p class="text-center">Δεν υπάρχουν προϊόντα στο καλάθι σας</p>
+    {{/if}}
+  </div>
+</div>
+
+        </div>
+    </div>
+    <div class="navCont navbar-toggleable">
+        <div class="navList container ">
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"> &#9776;</span>
+  </button>
+            <div class="collapse navbar-collapse" id="navbar">
+            <ul  > 
+                <li><a href="/">Αρχική</a></li>
+                <li class="drop">
+                    <a  class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                   Γυαλιά Ηλίου
+                  </a>
+                  <div class="dropdown-menu animated bounceInDown">
+                    <a class="dropdown-item" href="/sunglasses/man">Ανδρικά</a>
+                    <a class="dropdown-item" href="/sunglasses/women">Γυναικεία</a>
+                  </div>
+                </li>
+                <li class="drop">
+                    <a  class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                   Γυαλιά Οράσεως
+                  </a>
+                  <div class="dropdown-menu animated bounceInDown">
+                    <a class="dropdown-item" href="/glasses/man">Ανδρικά</a>
+                    <a class="dropdown-item" href="/glasses/women">Γυναικεία</a>
+                  </div>
+                </li>
+                <li><a href="/contact">Επικοινωνία</a></li>                
+            </ul>
+            </div>
+        </div>
+    </div>
+</div>

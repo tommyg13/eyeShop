@@ -1,0 +1,72 @@
+
+ <div class="banner" >
+ </div>
+ <div class="container main">
+   <div class="text-center">
+   <button class="text-center query btn btn-warning" data-type="all">Όλα</button>
+   <button class="text-center query btn btn-warning" data-type="ηλίου">Γυαλιά Ηλίου</button>
+   <button class="text-center query btn btn-warning" data-type="οράσεως" >Γυαλιά Οράσεως</button>
+   </div>
+   <div class="filters">
+     <form method="post" action="/search/all" id="filter">
+       <input type="hidden" name="_csrf" value="{{csrfToken}}">
+       <div class="form-group">
+ <span>Μάρκα</span> 
+ <select name="brand" >
+   <option value="arnette">Arnette</option>
+   <option value="dsquared">DSquared</option>
+   <option value="diesel">Diesel</option>
+   <option value="rayban">Rayban</option>   
+   <option value="carrera">Carrera</option>
+  </select>
+  </div>
+    <div class="form-group">
+ <span>Φύλο</span>
+ <select name="gender" >
+   <option value="both">-</option>
+   <option value="ανδρικά">Ανδρικά</option>
+   <option value="γυναικεία">Γυναικεία</option>
+  </select>  
+  </div>
+    <div class="form-group">
+   <span>Τιμή</span> 
+   <select name="price" >
+   <option value="70">0 - 70€</option>
+   <option value="150">71 - 150€</option>
+   <option value="151">Πάνω από 150€</option>
+  </select>
+  </div>
+ <button type="submit" class="fa fa-search"></button>
+     </form>  
+</div>  
+  <div class="pag">
+    {{#each pagArr}}
+    <a class={{this}}>{{this}}</a>
+    {{/each}}
+</div><br>
+  <hr>
+  <div class="products text-center">
+    {{#each newArr}}
+    <div class="prodCont">
+      <a href="/product/{{this._id}}"><img class="prodImg {{this._id}}" src="{{this.url}}" alt="{{this.brand}} {{this.model}}" /></a>
+      <p class="prodTitle"><strong>{{this.brand}}</strong></p>
+        <p class="prodModel">{{this.model}} </p>      
+      <p class="prodPrice">τιμή: {{this.price}}€ </p>
+      <button class="add btn btn-danger" data-id="{{this._id}}"><i class="fa fa-shopping-basket"></i> Προσθήκη στο καλάθι</button>
+    </div>
+    {{/each}}
+  </div>
+  <hr>
+  <div class="pag pagBtm">
+    {{#each pagArr}}
+    <a class={{this}}>{{this}}</a>
+    {{/each}}
+</div>
+</div>  
+
+<div class="info text-center">
+  <div class="container">
+  <h3>ΟΙ ΣΥΛΛΟΓΕΣ ΤΩΝ ΓΥΑΛΙΩΝ ΜΑΣ</h3>
+  <p>Διαλέγουμε για σας τα ωραιότερα γυαλιά ηλίου sunglasses από όλες τις συλλογές γυαλιών ηλίου που κυκλοφορούν. Τα μεγαλύτερα brands γυαλιών ηλίου - sunglasses . Όλα τα γυαλιά ηλίου που φορούν οι celebrities της ελληνικής και ξένης showbiz. Οι τελευταίες τάσεις της παγκόσμιας μόδας στα γυαλιά ηλίου , στα πιο εντυπωσιακά χρώματα και σχέδια. Αυθεντικά γυαλιά ηλίου με 100% εγγύηση αυθεντικότητας. Όλα τα μοντέλα γυαλιών ηλίου που δεν πρέπει να χάσετε. Μεταλλικά ή κοκκάλινα γυαλιά ηλίου, με χρωματιστούς καθρέφτες ή χωρίς, fashion ή για sports, η καλύτερη επιλογή σας για γυαλιά ηλίου είναι το Eye-Shop.gr . Δωρεάν αποστολή στο χώρο σας με courier. Εγγύηση 1 έτους για όλα τα γυαλιά ηλίου.</p>
+</div>  
+</div>

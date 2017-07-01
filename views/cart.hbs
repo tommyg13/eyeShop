@@ -1,0 +1,82 @@
+<div class="container cartContainer">
+    <h2 align="center">Καλάθι αγορών</h2>
+  {{# if products}}
+    <a href="/clearCart" style="display:block; text-align:right">Καθαρισμός</a>
+    {{/if}}
+    <hr />
+{{# if products}}
+{{# each products}}
+<div  class="cartCont" data-id="{{this.item._id}}">
+ <div class="cartInfo text-center">
+    <a href="/product/{{this.item._id}}"><img src="{{this.item.url}}" /></a><br />
+
+    </div>
+<div class="cartInputs text-center">
+    <span><strong>{{this.item.brand}} {{this.item.model}}</strong></span>
+        <p>τιμή: {{this.item.price}}€ </p>
+    
+</div>
+   
+<div  class="price" data-id="{{this.item._id}}">
+    <div>
+    <a class="quant" data-url="/increase/{{this.item._id}}" ><i class="fa fa-plus-square" aria-hidden="true"></i></a>
+    <input class="input {{this.item._id}}" value='{{this.qty}}' disabled >
+     <a class="quant" data-url="/decrease/{{this.item._id}}"  ><i class="fa fa-minus-square" aria-hidden="true"></i></a>
+     </div>
+     <div>
+      <a class="quant" data-url="/delete/{{this.item._id}}" ><i class="fa fa-times" aria-hidden="true"></i></a>
+     <span class="{{this.item._id}}">σύνολο: {{this.price}}€</span>
+     </div>
+       </div>
+</div>
+{{/each}}
+<hr />
+<div class="total">
+<p><strong>σύνολο: {{total}}€ </strong></p>
+{{else}}
+<h1 align="center">Δεν υπάρχουν προϊόντα στο καλάθι σας</h1>
+{{/if}}
+</div>
+{{# if products}}
+<a href="/checkout">Ολοκλήρωση</a>
+{{/if}}
+</div>
+
+
+{{!--<div class="container cartContainer">--}}
+{{!--    <h2 align="center">Καλάθι αγορών</h2>--}}
+{{!--  {{# if products}}--}}
+{{!--    <a href="/clearCart" style="display:block; text-align:right">Καθαρισμός</a>--}}
+{{!--    {{/if}}--}}
+{{!--    <hr />--}}
+{{!--{{# if products}}--}}
+{{!--{{# each products}}--}}
+{{!--<div id="{{this.item._id}}" class="cartCont">--}}
+{{!-- <div class="cartInfo text-center">--}}
+{{!--    <a href="/product/{{this.item._id}}"><img src="{{this.item.url}}" /></a><br />--}}
+{{!--    <span><strong>{{this.item.brand}} {{this.item.model}}</strong></span>--}}
+{{!--        <p>τιμή: {{this.item.price}}€ </p>--}}
+{{!--    </div>--}}
+{{!--<div class="cartInputs text-center">--}}
+{{!--    <a class="quant" data-url="/increase/{{this.item._id}}" ><i class="fa fa-plus-square" aria-hidden="true"></i></a>--}}
+{{!--    <input class="input {{this.item._id}}" value='{{this.qty}}' disabled >--}}
+{{!--     <a class="quant" data-url="/decrease/{{this.item._id}}" ><i class="fa fa-minus-square" aria-hidden="true"></i></a>--}}
+{{!--</div>--}}
+   
+{{!--<div  class="price">--}}
+{{!--      <a class="quant" data-url="/delete/{{this.item._id}}" ><i class="fa fa-times" aria-hidden="true"></i></a>--}}
+{{!--     <span class="{{this.item._id}}" >σύνολο: {{this.price}}€</span>--}}
+{{!--       </div>--}}
+{{!--</div>--}}
+{{!--{{/each}}--}}
+{{!--<hr />--}}
+{{!--<div class="total">--}}
+{{!--<p><strong>σύνολο: {{total}}€ </strong></p>--}}
+{{!--{{else}}--}}
+{{!--<h1 align="center">Δεν υπάρχουν προϊόντα στο καλάθι σας</h1>--}}
+{{!--{{/if}}--}}
+{{!--</div>--}}
+{{!--{{# if products}}--}}
+{{!--<a href="/checkout">Ολοκλήρωση</a>--}}
+{{!--{{/if}}--}}
+{{!--</div>--}}

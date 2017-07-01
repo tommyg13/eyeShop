@@ -1,0 +1,40 @@
+<div id="map">
+   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3143.5086371762486!2d23.725800715748388!3d38.01192007971704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1a2c2ce724c7b%3A0xa44aefe9b91fd9de!2zzprOrM-Ez4kgzqDOsc-Ezq7Pg865zrEsIM6RzrjOrs69zrEgMTA0IDQ1LCDOlc67zrvOrM60zrE!5e0!3m2!1sel!2sus!4v1498673600296" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+</div>
+<div class="container ">
+    <div class="formMessages text-center"></div>
+    <div class="contact">
+        <div class="contactInfo">
+         <h3>Επικοινωνία</h3>   
+         <ul class="contInfo">
+         <li><i class="fa fa-phone"></i> 6942234668 </li>
+        <li><i class="fa fa-fax"></i> 2108921329</li>
+        <li><i class="fa fa-map-marker"> Κάτω Πατήσια</i></li>
+        <li><i class="fa fa-envelope-o"></i> iron_tommy13@hotmail.com</li>
+         </ul>
+         <i class="fa fa-clock-o"></i> Ωράριο Καταστήματος:
+         <ul class="hours">
+             <li>Δευτέρα:  	09:00πμ - 3:00μμ</li>
+             <li>Τρίτη:  	09:00πμ - 2:00μμ</li>
+             <li>Τετάρτη:  	09:00πμ - 3:00μμ</li> 
+             <li>Πέμπτη:  	09:00πμ - 2:00μμ</li>
+             <li>Παρασκευή:  	09:00πμ - 2:00μμ </li>
+             <li>Σαββάτο:  	09:00πμ - 3:00μμ</li>             
+         </ul>
+        </div>
+        <div class="form">
+            <form id="contForm" method="post">
+             <input type="hidden" name="_csrf" value="{{csrfToken}}">                  
+            <label>Όνομα</label>
+            <input type="text" class="form-control" name="name" required>
+            <label>Email</label>
+            <input type="text" class="form-control" name="email" required>
+            <label>Θέμα</label><br>
+            <input type="text" class="form-control" name="subject" required>
+            <label>Μήνυμα</label>
+            <textarea type="text" class="form-control" name="message" required></textarea>
+            <button class="btn btn-success" type="submit">Αποστολή</button>
+            </form>
+        </div>
+    </div>
+</div>

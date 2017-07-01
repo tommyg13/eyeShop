@@ -1,0 +1,56 @@
+<div class="main text-center">
+            <h1>Γυλιά {{prod.type}} </h1>
+            <p> <strong>{{prod.brand}}</strong> {{prod.model}}</p>
+    <div class="container info">
+        <div class="imgContainer">
+            <img class="infoImg imgModal {{prod._id}}" src="{{img}}"/> </br>
+            <a class="img" data-img="{{img}}" style="color:blue">1</a>
+            <a class="img" data-img="{{img1}}">2</a>
+            <a class="img" data-img="{{img2}}">3</a>
+            </div>
+        <div class="details">
+            <ul>
+        <li><strong>χαρακτηριστικά:</strong> {{prod.description}}</li>
+        <li><strong>είδος:</strong> {{prod.gender}} </li>
+        <li><strong>τιμή:</strong> {{prod.price}}€</li>
+        </ul>
+         <button class="add btn btn-danger" data-id={{prod._id}}><i class="fa fa-shopping-basket"></i> Προσθήκη στο καλάθι</button>
+         </div>
+    </div>
+</div>
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img01">
+  <div id="caption"></div>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+$(".imgModal").on("click",function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+});
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+};
+
+$(".img").on("click",function(){
+   $(this).css("color","blue").siblings().css("color","black"); 
+   var currImg=$(this).data("img");
+   $(".infoImg").attr("src",currImg);
+});
+
+</script>

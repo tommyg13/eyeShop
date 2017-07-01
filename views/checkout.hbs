@@ -1,0 +1,27 @@
+        <h1 align="center">Checkout</h1>
+        <h4 align="center">Your Total: €{{total}}</h4>
+<div class="container text-center formContainer">
+     <div id="charge-error"></div>
+        <form action="/checkout" method="post" id="checkout-form">
+         <input type="hidden", name="_csrf", value="{{csrfToken}}">              
+  
+                        <label for="name">Email</label>
+                        <input type="text" id="name" class="form-control" required name="name">
+                        <label for="address">Διεύθνση</label>
+                        <input type="text" id="address" class="form-control" required name="address">
+                        <label for="card-name">Ονοματεπώνυμο κατόχου</label>
+                        <input type="text" id="card-name" class="form-control" required>
+                        <label for="card-number">Αριθμός κάρτας</label>
+                        <input type="text" id="card-number" class="form-control" required>
+                        <label for="card-expiry-month">Μήνας Λήξης</label>
+                        <input type="text" id="card-expiry-month" class="form-control" required>
+                        <label for="card-expiry-year">Έτος Λήξης</label>
+                        <input type="text" id="card-expiry-year" class="form-control" required>
+                        <label for="card-cvc">CVC</label>
+                        <input type="text" id="card-cvc" class="form-control" required>
+            <button type="submit" class="btn btn-success">Αγορά</button>
+        </form>
+    </div>
+
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+<script type="text/javascript" src="/javascripts/checkout.js"></script>  

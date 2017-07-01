@@ -1,0 +1,13 @@
+<div style="background:#e3e1d6;">
+<div class="main container text-center">
+        {{#each prod}}
+    <div class="prodCont">
+      <a href="/product/{{this._id}}"><img class="prodImg {{this._id}}" src="{{this.url}}" /></a>
+      <p class="prodTitle"><strong>{{this.brand}}</strong></p>
+      <p class="prodModel">{{this.model}} </p>
+      <p class="prodPrice">τιμή: {{this.price}}€ </p>
+      <button class="add btn btn-danger" data-id={{this._id}}><i class="fa fa-shopping-basket"></i> Προσθήκη στο καλάθι</button>
+    </div>
+{{/each}}
+</div>
+</div>

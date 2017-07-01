@@ -1,0 +1,44 @@
+.contact {
+    display: flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    padding-bottom: 10%;
+    padding-top: 30px;    
+}
+
+.contInfo {
+    list-style: none;
+    text-align:left;
+    padding-left: 0px;
+}
+
+
+.hours {
+    background:#f1f1f1;
+    list-style: none;
+    text-align:left;
+    padding:10px;
+}
+
+.contactInfo {
+    margin-right: 40px;
+    align-self: center;  
+        width: 300px;
+    max-width: 90vw;
+}
+
+.form-control, .form button {
+   width: 400px !important;
+   max-width:90vw;
+}
+
+.form {
+    align-self: flex-start;
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+#map {
+    padding-top: 142px;
+}
+  
+}
