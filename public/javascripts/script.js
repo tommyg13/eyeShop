@@ -3,6 +3,13 @@ $.ajaxPrefilter(function( options, original_Options, jqXHR ) {
 });
 
 $(document).ready(function () {
+    var url = window.location.href;
+
+if(url==="https://eye-shop-gkazikas.c9users.io/checkout") {
+    
+   $(".cartDrop").removeClass("dropdown")
+   $(".cartDrop a").removeAttr('data-toggle').css("cursor","default");
+}
     $("a[href='#top']").click(function() {
   $("html, body").animate({ scrollTop: 0 }, "slow");
   return false;
