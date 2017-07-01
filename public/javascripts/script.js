@@ -5,7 +5,7 @@ $.ajaxPrefilter(function( options, original_Options, jqXHR ) {
 $(document).ready(function () {
     var url = window.location.href;
 
-if(url==="https://eye-shop-gkazikas.c9users.io/checkout") {
+if(url==="https://eye-shop.herokuapp.com/checkout") {
     
    $(".cartDrop").removeClass("dropdown")
    $(".cartDrop a").removeAttr('data-toggle').css("cursor","default");
