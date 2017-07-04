@@ -190,7 +190,7 @@ $.ajax({
    }});
    });
 
-   $(".quant").on("click",function(e){
+   $("body").on("click",".quant",function(e){
          var url=$(this).data("url");
          var classN=$(this).parent().parent().data("id");
     e.preventDefault();
