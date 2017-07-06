@@ -10,6 +10,7 @@ var session = require("express-session");
 var MongoStore = require('connect-mongo')(session);
 var Cart = require('./models/cart');
 var csrf = require('csurf');
+var compression = require('compression');
 
 var app = express();
 
@@ -44,6 +45,7 @@ app.use(function(req, res, next) {
    req.session.cookie.maxAge = 180 * 60 * 1000; // 3 hours
     next();
 });
+app.use(compression());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(function(req, res, next) {
   res.set('Cache-Control', 'no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0');
