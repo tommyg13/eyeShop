@@ -1,9 +1,9 @@
 <div class="container cartContainer">
     <h2 align="center">Καλάθι αγορών</h2>
   {{# if products}}
-    <a href="/clearCart" style="display:block; text-align:right">Καθαρισμός</a>
+    <a href="/clearCart" style="float:right">Καθαρισμός</a>
     {{/if}}
-    <hr />
+    <hr style="clear:both"/>
 {{# if products}}
 {{# each products}}
 <div  class="cartCont" data-id="{{this.item._id}}">
